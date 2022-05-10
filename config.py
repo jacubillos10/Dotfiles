@@ -75,6 +75,7 @@ keys = [
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([mod],"m",lazy.spawn("rofi -show run")),
+    Key([mod],"l", lazy.spawn("Thunar")),
     Key([mod,"shift"],"m",lazy.spawn("rofi -show")),
     Key([],"Print",lazy.spawn("scrot /home/cubos/Pictures/screenshots/screenshot_at_"+str(date.today())+".png")),
     Key([],"XF86AudioRaiseVolume",lazy.spawn("pactl -- set-sink-volume 0 +10%")),
@@ -166,10 +167,10 @@ screens = [
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.CurrentLayout(),
                 #widget.TextBox("default config", name="default"),
-               # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
+               # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"), 
                 widget.Systray(), #Aquí en systray se ponen los íconos, por ejemplo del wifi
+                widget.CurrentLayout(),
                 widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
                 #widget.QuickExit(),
             ],
@@ -228,7 +229,8 @@ wl_input_rules = None
 wmname = "LG3D"
 
 comandos_ejecutar=["feh --bg-fill /home/cubos/Pictures/Caratulas/archer-fate-stay-night-rin-tohsaka-ap-1336x768.jpg",
-        "picom &"]
+        "picom &",
+        "nm-applet &"]
 
 for j in range(len(comandos_ejecutar)):
     os.system(comandos_ejecutar[j])
