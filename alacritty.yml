@@ -60,7 +60,7 @@ window:
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-  opacity: 0.75
+  opacity: 0.85
 
   # Startup Mode (changes require restart)
   #
@@ -168,7 +168,7 @@ font:
 colors:
   # Default colors
   primary:
-    background: '#060018'
+    background: '#140028' #160038, 120024, 060018, 100020, 140028
     foreground: '#ffff45'
   # Normal colors
   normal:
@@ -184,11 +184,11 @@ colors:
   # Bright colors
   bright:
     black: '#7f7f7f'
-    red: '#aa50ff' #ff0000
+    red: '#ff0000' #ff0000 #aa50ff
     green: '#00ff00'
     yellow: '#ffff00'
-    blue: '#5c5cff'
-    magenta: '#00ffab' #ff00ff
+    blue: '#0000ff' #5c5cff
+    magenta: '#ff00ff' #ff00ff
     cyan: '#00ffff'
     white: '#ffffff'
 theme: XTerm
