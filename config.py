@@ -75,7 +75,7 @@ keys = [
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([mod],"m",lazy.spawn("rofi -show run")),
-    Key([mod],"l", lazy.spawn("Thunar")),
+    Key([mod],"e", lazy.spawn("Thunar")),
     Key([mod,"shift"],"m",lazy.spawn("rofi -show")),
     Key([],"Print",lazy.spawn("scrot /home/cubos/Pictures/screenshots/screenshot_at_"+str(date.today())+".png")),
     Key([],"XF86AudioRaiseVolume",lazy.spawn("pactl -- set-sink-volume 0 +10%")),
@@ -85,7 +85,7 @@ keys = [
     Key([mod,"shift"],"o",lazy.spawn("brightnessctl set 10%-")),
 ]
 
-groups = [Group(i) for i in [" " ," ","ﭮ"," "," "]]
+groups = [Group(i) for i in [" "," "," " ,"ﭮ"," "," ", "ð", "", ""]]
 #El ícno que quiero poner como WS1 es  . Para el WS2 ws  . Para el WS3 es  
 
 for i,group in enumerate(groups):
@@ -175,8 +175,51 @@ screens = [
                 #widget.QuickExit(),
             ],
             24,
-            opacity=0.75,
-            background=["#060018","#060018"],
+            opacity=0.85,
+            background=["#140028","#140028"],
+            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
+            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
+        ),
+    ),
+    Screen(
+        top=bar.Bar(
+            [ 
+                widget.GroupBox(
+                    #background=["#080025","250008"],
+                    #foreground=["#00cdcd","#00cdcd"],
+                    highlight_method="block",
+                    font="UbuntuMono Nerd Font",
+                    fontsize=20,
+                    margin_y=3,
+                    #margin_x=0,
+                    padding_y=8,
+                    padding_x=5,
+                    rounded=False,
+                    #border_width=1,
+                    #other_current_screen_border=["#ff0000","#ff0000"],
+                ),
+                widget.Prompt(),
+                widget.WindowName(
+                    foreground=["#00ffff","#00ffff"],
+                    fontsize=15,
+                    font="UbuntuMono Nerd Font Bold"
+                ),
+                widget.Chord(
+                    chords_colors={
+                        "launch": ("#ff0000", "#ffffff"),
+                    },
+                    name_transform=lambda name: name.upper(),
+                ),
+                #widget.TextBox("default config", name="default"),
+               # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"), 
+                widget.Systray(), #Aquí en systray se ponen los íconos, por ejemplo del wifi
+                widget.CurrentLayout(),
+                widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
+                #widget.QuickExit(),
+            ],
+            24,
+            opacity=0.85,
+            background=["#140028","#140028"],
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
@@ -229,7 +272,7 @@ wl_input_rules = None
 wmname = "LG3D"
 
 comandos_ejecutar=["feh --bg-fill /home/cubos/Pictures/Caratulas/archer-fate-stay-night-rin-tohsaka-ap-1336x768.jpg",
-        "picom &",
+        "picom --experimental-backend &",
         "nm-applet &"]
 
 for j in range(len(comandos_ejecutar)):
