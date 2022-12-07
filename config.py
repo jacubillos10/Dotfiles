@@ -269,10 +269,10 @@ wl_input_rules = None
 #
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
-wmname = "LG3D"
+wmname = "Qtile"
 
 comandos_ejecutar=["feh --bg-fill /home/cubos/Pictures/Caratulas/archer-fate-stay-night-rin-tohsaka-ap-1336x768.jpg",
-        "picom --experimental-backend &",
+        "picom &",
         "nm-applet &"]
 
 for j in range(len(comandos_ejecutar)):
