@@ -76,16 +76,16 @@ keys = [
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([mod],"m",lazy.spawn("rofi -show run")),
     Key([mod],"e", lazy.spawn("Thunar")),
-    Key([mod,"shift"],"m",lazy.spawn("rofi -show")),
+    Key([mod,"shift"],"m",lazy.spawn("rofi -show drun")),
     Key([],"Print",lazy.spawn("scrot /home/cubos/Pictures/screenshots/screenshot_at_"+str(date.today())+".png")),
-    Key([],"XF86AudioRaiseVolume",lazy.spawn("pactl -- set-sink-volume 0 +10%")),
-    Key([],"XF86AudioLowerVolume",lazy.spawn("pactl -- set-sink-volume 0 -10%")),
-    Key([],"XF86AudioMute",lazy.spawn("pactl -- set-sink-volume 0 0%")),
-    Key([mod,"shift"],"p",lazy.spawn("brightnessctl set +10%")),
-    Key([mod,"shift"],"o",lazy.spawn("brightnessctl set 10%-")),
+    #Key([],"XF86AudioRaiseVolume",lazy.spawn("pactl -- set-sink-volume 0 +10%")),
+    #Key([],"XF86AudioLowerVolume",lazy.spawn("pactl -- set-sink-volume 0 -10%")),
+    #Key([],"XF86AudioMute",lazy.spawn("pactl -- set-sink-volume 0 0%")),
+    #Key([mod,"shift"],"p",lazy.spawn("brightnessctl set +10%")),
+    #Key([mod,"shift"],"o",lazy.spawn("brightnessctl set 10%-")),
 ]
 
-groups = [Group(i) for i in [" "," "," " ,"ﭮ"," "," ", "ð", "", ""]]
+groups = [Group(i) for i in [" ","󰈹 "," " ,"󰙯","󰓓 "," ", "", "󰄻", ""]]
 #El ícno que quiero poner como WS1 es  . Para el WS2 ws  . Para el WS3 es  
 
 for i,group in enumerate(groups):
@@ -115,7 +115,10 @@ for i,group in enumerate(groups):
 #fin for 
 
 layouts = [
-    layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
+    layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=5, 
+        margin = [5, 5, 5, 5],
+        border_focus = '#DDEE40',
+        border_on_single = False),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
@@ -131,7 +134,7 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font="UbuntuMono Nerd Font",
+    font="monospace",
     fontsize=12,
     padding=3,
 )
@@ -140,26 +143,35 @@ extension_defaults = widget_defaults.copy()
 screens = [
     Screen(
         top=bar.Bar(
-            [ 
+            [
+                widget.TextBox(
+                    font='monospace',
+                    padding=1,
+                ), 
                 widget.GroupBox(
                     #background=["#080025","250008"],
                     #foreground=["#00cdcd","#00cdcd"],
                     highlight_method="block",
-                    font="UbuntuMono Nerd Font",
+                    font="Ubuntu Nerd Font",
                     fontsize=20,
                     margin_y=3,
                     #margin_x=0,
                     padding_y=8,
                     padding_x=5,
-                    rounded=False,
+                    rounded=True,
+                    active=['#ffff00','#00ffff'],
+                    inactive=['#00ffff','#ff00ff'],
+                    highlight_color=['#000000','#160030'],
+                    disable_drag=True,
+                    this_current_screen_border=['#000000','#9a00ff'],
                     #border_width=1,
                     #other_current_screen_border=["#ff0000","#ff0000"],
                 ),
                 widget.Prompt(),
                 widget.WindowName(
                     foreground=["#00ffff","#00ffff"],
-                    fontsize=15,
-                    font="UbuntuMono Nerd Font Bold"
+                    fontsize=12,
+                    font="Ubuntu Nerd Font Bold"
                 ),
                 widget.Chord(
                     chords_colors={
@@ -170,13 +182,27 @@ screens = [
                 #widget.TextBox("default config", name="default"),
                # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"), 
                 widget.Systray(), #Aquí en systray se ponen los íconos, por ejemplo del wifi
-                widget.CurrentLayout(),
-                widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
+                widget.CurrentLayoutIcon(
+                    font="Ubuntu Nerd Font Bold",
+                    #fontsize=12,
+                ),
+                widget.Volume(
+                    #emoji = True,
+                    fmt = 'Vol:{}',
+                    foreground = ['#ffff00','#00ff00'],
+                    font = 'Ubuntu Nerd Font Bold',
+                ), 
+                widget.Clock(
+                    format="%Y-%m-%d %a %I:%M %p",
+                    foreground=['#00ff00','#00ffff'],
+                    font="UbuntuMono Nerd Font",
+                    fontsize=13,
+                ),
                 #widget.QuickExit(),
             ],
             24,
             opacity=0.85,
-            background=["#140028","#140028"],
+            background=["#5000b3","#000000"], #Color morado cool: #140028 
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
@@ -188,7 +214,7 @@ screens = [
                     #background=["#080025","250008"],
                     #foreground=["#00cdcd","#00cdcd"],
                     highlight_method="block",
-                    font="UbuntuMono Nerd Font",
+                    font="Ubuntu Nerd Font",
                     fontsize=20,
                     margin_y=3,
                     #margin_x=0,
@@ -202,7 +228,7 @@ screens = [
                 widget.WindowName(
                     foreground=["#00ffff","#00ffff"],
                     fontsize=15,
-                    font="UbuntuMono Nerd Font Bold"
+                    font="Ubuntu Nerd Font Bold"
                 ),
                 widget.Chord(
                     chords_colors={
@@ -271,7 +297,7 @@ wl_input_rules = None
 # java that happens to be on java's whitelist.
 wmname = "Qtile"
 
-comandos_ejecutar=["feh --bg-fill /home/cubos/Pictures/Caratulas/archer-fate-stay-night-rin-tohsaka-ap-1336x768.jpg",
+comandos_ejecutar=["feh --bg-fill /home/cubos/Pictures/Caratulas/tsugumi2.jpg",
         "picom &",
         "nm-applet &"]
 
