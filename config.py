@@ -74,7 +74,7 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    Key([mod],"m",lazy.spawn("rofi -show run")),
+    Key([mod],"m",lazy.spawn("rofi -show drun")),
     Key([mod],"e", lazy.spawn("Thunar")),
     Key([mod,"shift"],"m",lazy.spawn("rofi -show drun")),
     Key([],"Print",lazy.spawn("scrot /home/cubos/Pictures/screenshots/screenshot_at_"+str(date.today())+".png")),
@@ -209,7 +209,11 @@ screens = [
     ),
     Screen(
         top=bar.Bar(
-            [ 
+            [
+                widget.TextBox(
+                    font='monospace',
+                    padding=1,
+                ), 
                 widget.GroupBox(
                     #background=["#080025","250008"],
                     #foreground=["#00cdcd","#00cdcd"],
@@ -220,14 +224,19 @@ screens = [
                     #margin_x=0,
                     padding_y=8,
                     padding_x=5,
-                    rounded=False,
+                    rounded=True,
+                    active=['#ffff00','#00ffff'],
+                    inactive=['#00ffff','#ff00ff'],
+                    highlight_color=['#000000','#160030'],
+                    disable_drag=True,
+                    this_current_screen_border=['#000000','#9a00ff'],
                     #border_width=1,
                     #other_current_screen_border=["#ff0000","#ff0000"],
                 ),
                 widget.Prompt(),
                 widget.WindowName(
                     foreground=["#00ffff","#00ffff"],
-                    fontsize=15,
+                    fontsize=12,
                     font="Ubuntu Nerd Font Bold"
                 ),
                 widget.Chord(
@@ -239,17 +248,32 @@ screens = [
                 #widget.TextBox("default config", name="default"),
                # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"), 
                 widget.Systray(), #Aquí en systray se ponen los íconos, por ejemplo del wifi
-                widget.CurrentLayout(),
-                widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
+                widget.CurrentLayoutIcon(
+                    font="Ubuntu Nerd Font Bold",
+                    #fontsize=12,
+                ),
+                widget.Volume(
+                    #emoji = True,
+                    fmt = 'Vol:{}',
+                    foreground = ['#ffff00','#00ff00'],
+                    font = 'Ubuntu Nerd Font Bold',
+                ), 
+                widget.Clock(
+                    format="%Y-%m-%d %a %I:%M %p",
+                    foreground=['#00ff00','#00ffff'],
+                    font="UbuntuMono Nerd Font",
+                    fontsize=13,
+                ),
                 #widget.QuickExit(),
             ],
             24,
             opacity=0.85,
-            background=["#140028","#140028"],
+            background=["#5000b3","#000000"], #Color morado cool: #140028 
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
     ),
+
 ]
 
 # Drag floating layouts.
@@ -297,9 +321,10 @@ wl_input_rules = None
 # java that happens to be on java's whitelist.
 wmname = "Qtile"
 
-comandos_ejecutar=["feh --bg-fill /home/cubos/Pictures/Caratulas/tsugumi2.jpg",
+comandos_ejecutar=["feh --bg-fill /home/cubos/Pictures/Caratulas/guilty_crown_3.jpg",
         "picom &",
-        "nm-applet &"]
+        "nm-applet &",
+        "numlockx &"]
 
 for j in range(len(comandos_ejecutar)):
     os.system(comandos_ejecutar[j])

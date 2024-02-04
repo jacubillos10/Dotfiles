@@ -1,16 +1,41 @@
-#
-# ~/.bashrc
-#
+# .bashrc
 
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
 
-alias ls='exa --group-directories-first'
-alias ll='ls -lhg'
-alias la='ls -lhag'
-alias grep='grep --color=auto'
-#PS1='[\u@\h \W]\$ '
-. ~/.git-prompt.sh
-GIT_PS1=SHOWDIRTYSTATE=1
-PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[33m\]$(__git_ps1 "(%s)")\[\033[37m\]\$\[\033[00m\] '
-export PATH="/usr/local/bin:/usr/bin:/usr/sbin:/usr/local/sbin:/home/cubos/.local/bin:/var/lib/snapd/snap/bin:/home/cubos/discord:/opt/cuda/bin"
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
+then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+if [ -d ~/.bashrc.d ]; then
+	for rc in ~/.bashrc.d/*; do
+		if [ -f "$rc" ]; then
+			. "$rc"
+		fi
+	done
+fi
+
+unset rc
+
+alias ls='eza --group-directories-first -lhg'
+alias cp='cp --verbose'
+
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\]<\W>\[\033[33m\]$(parse_git_branch)\[\033[01;31m\]\$ \[\033[37m\]'
+. "$HOME/.cargo/env"
+
+export VISUAL=vim
+export EDITOR="$VISUAL"
+export HSA_OVERRIDE_GFX_VERSION=10.3.0

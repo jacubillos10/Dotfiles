@@ -1,0 +1,34 @@
+[colors.bright]
+black = "#7f7f7f"
+blue = "#2575ff"
+cyan = "#00ffff"
+green = "#00ff00"
+magenta = "#ff00ff"
+red = "#ff0000"
+white = "#ffffff"
+yellow = "#ffff00"
+
+[colors.normal]
+black = "#000000"
+blue = "#1060ee"
+cyan = "#00cdcd"
+green = "#00cd00"
+magenta = "#cd00cd"
+red = "#cd0000"
+white = "#e5e5e5"
+yellow = "#cdcd00"
+
+[colors.primary]
+background = "#140028"
+foreground = "#ffff45"
+
+[font]
+size = 12.0
+
+[font.normal]
+family = "UbuntuMono Nerd Font"
+
+[window]
+opacity = 0.8
+title = "Alacritty"
+#"window.decorations_theme_variant" = "dark"
