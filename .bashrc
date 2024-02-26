@@ -28,6 +28,7 @@ unset rc
 
 alias ls='eza --group-directories-first -lhg'
 alias cp='cp --verbose'
+alias eject='eject --verbose'
 
 parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -39,3 +40,4 @@ PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\]<\W>\[\033[33m\]$(parse_git_branch)\[\03
 export VISUAL=vim
 export EDITOR="$VISUAL"
 export HSA_OVERRIDE_GFX_VERSION=10.3.0
+export C_INCLUDE_PATH=/usr/include/python3.12/
