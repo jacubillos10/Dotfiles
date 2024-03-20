@@ -1,0 +1,10 @@
+@import "launchpad.rasi"
+
+configuration {
+	display-drun: "Programas";
+	show-icons: true;
+	font: "Ubuntu Nerd Font Medium 15";
+	icon-theme: "Infinity-Dark-Icons";
+}
+
+@theme "/dev/null"

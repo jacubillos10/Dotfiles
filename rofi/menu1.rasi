@@ -1,0 +1,27 @@
+/*******************************************************************************
+ * ROUNDED THEME FOR ROFI 
+ * User                 : LR-Tech               
+ * Theme Repo           : https://github.com/lr-tech/rofi-themes-collection
+ *******************************************************************************/
+
+* {
+    bg0:    #212121F2;
+    bg1:    #2A2A2A;
+    bg2:    #3D3D3D80;
+    bg3:    #5020CBF2;
+	bg4: 	#2200A2;
+	bg5: 	#DADA00;
+    fg0:    #E6E6E6;
+    fg1:    #FFFFFF;
+    fg2:    #969696;
+    fg3:    #3D3D3D;
+}
+
+@import "rounded-common.rasi"
+
+configuration {
+	display-drun: "Programas";
+	show-icons: true;
+	font: "Ubuntu Nerd Font Medium 13";
+	icon-theme: "Infinity-Dark-Icons";
+}

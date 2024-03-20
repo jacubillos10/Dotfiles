@@ -76,7 +76,7 @@ keys = [
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([mod],"m",lazy.spawn("rofi -show drun")),
     Key([mod],"e", lazy.spawn("Thunar")),
-    Key([mod,"shift"],"m",lazy.spawn("rofi -show drun")),
+    Key([mod,"shift"],"m",lazy.spawn("rofi -show run")),
     Key([],"Print",lazy.spawn("scrot /home/cubos/Pictures/screenshots/screenshot_at_"+str(date.today())+".png")),
     #Key([],"XF86AudioRaiseVolume",lazy.spawn("pactl -- set-sink-volume 0 +10%")),
     #Key([],"XF86AudioLowerVolume",lazy.spawn("pactl -- set-sink-volume 0 -10%")),
@@ -321,7 +321,7 @@ wl_input_rules = None
 # java that happens to be on java's whitelist.
 wmname = "Qtile"
 
-comandos_ejecutar=["feh --bg-fill /home/cubos/Pictures/Caratulas/guilty_crown_3.jpg",
+comandos_ejecutar=["feh --bg-fill /home/cubos/Pictures/Caratulas/fate_default.jpg",
         "picom &",
         "nm-applet &",
         "numlockx &"]
