@@ -29,6 +29,7 @@ unset rc
 alias ls='eza --group-directories-first -lhg'
 alias cp='cp --verbose'
 alias eject='eject --verbose'
+alias neofetch='fastfetch'
 
 parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -41,3 +42,5 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 export HSA_OVERRIDE_GFX_VERSION=10.3.0
 export C_INCLUDE_PATH=/usr/include/python3.12/
+export THESIS_PATH="/home/cubos/Documents/Tesis_RUS/RUS_uniandes"
+export LEARNING_C_PATH="/home/cubos/Documents/Cubos2.0/C_open_edg/Aprendiendo_C"
