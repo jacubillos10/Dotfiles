@@ -19,7 +19,7 @@ white = "#e5e5e5"
 yellow = "#cdcd00"
 
 [colors.primary]
-background = "#140028"
+background = "#140028"##140028"#, "#000042"]
 foreground = "#ffff45"
 
 [font]
@@ -29,6 +29,6 @@ size = 12.0
 family = "UbuntuMono Nerd Font"
 
 [window]
-opacity = 0.45
-title = "Alacritty"
+opacity = 0.85
+title = "Terminal"
 #"window.decorations_theme_variant" = "dark"

@@ -7,7 +7,7 @@
 }
 
 window#waybar {
-    background: transparent;
+    background: rgba(20, 0, 40, 0.75);
 	/*filter: blur(50px); */
     color: white;
 }
@@ -36,7 +36,11 @@ window#waybar {
 
 #workspaces button.active {
     color: yellow;
-    /*border-top: 2px solid yellow; You can adjust the border color as needed */
+    border-top: 2px solid yellow; /*You can adjust the border color as needed */
+}
+
+#workspaces button.inactive {
+	color: green;
 }
 
 #workspaces button.current_input {
