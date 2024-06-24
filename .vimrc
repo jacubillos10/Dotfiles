@@ -1,4 +1,5 @@
 set number
+set relativenumber
 set mouse=a
 set numberwidth=1
 syntax enable
@@ -31,8 +32,8 @@ Plugin 'ycm-core/YouCompleteMe'
 call vundle#end()
 
 autocmd VimEnter * NERDTree | vertical resize 30
-inoremap <c-b> <Esc>:NERDTreeToggle<cr>:vertical resize 30<cr>
-nnoremap <c-b> <Esc>:NERDTreeToggle<cr>:vertical resize 30<cr>
+inoremap <c-t> <Esc>:NERDTreeToggle<cr>:vertical resize 30<cr>
+nnoremap <c-t> <Esc>:NERDTreeToggle<cr>:vertical resize 30<cr>
 nnoremap <m-Right> <Esc>:bnext <cr>
 inoremap <m-Right> <Esc>:bnext <cr>
 nnoremap <m-Left> <Esc>:bprevious <cr>
