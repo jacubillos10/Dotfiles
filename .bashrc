@@ -44,3 +44,4 @@ export HSA_OVERRIDE_GFX_VERSION=10.3.0
 export C_INCLUDE_PATH=/usr/include/python3.12/
 export THESIS_PATH="/home/cubos/Documents/Tesis_RUS/RUS_uniandes"
 export LEARNING_C_PATH="/home/cubos/Documents/Cubos2.0/C_open_edg/Aprendiendo_C"
+export KAGGLE_PATH="/home/cubos/Documents/Cubos2.0/ML/kaggle"
