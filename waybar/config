@@ -1,12 +1,15 @@
 {
     "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar at the bottom of your screen
-    "height": 24, // Waybar height
+    "position": "left", // Waybar at the bottom of your screen
+    //"height": 1080, // Waybar height
+	"margin-left": 5,
+	"margin-right": 5,
+	"margin-top": 0,
     // "width": 1366, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["pulseaudio", "network", "cpu", "memory", "tray", "clock"],
+    //"modules-center": ["hyprland/window"],
+    "modules-left": ["custom/start", "hyprland/workspaces"],
+    "modules-right": ["pulseaudio", "network", "cpu", "memory", "tray", "clock", "custom/void"],
     "hyprland/workspaces": {
 		"persistent-workspaces": {
 			"*":10
@@ -17,10 +20,10 @@
             "1": "",
             "2": "",
             "3": "󱍢",
-            "4": "󱀤",
+            "4": "",
             "5": "󱡞",
             "6": "",
-            "7": "",
+            "7": "󰄻",
 			"8": "󰊴",
 			"9": "󰙯",
 			"10": "", // 󰭄  󰙯        󰊴  󱍢    󰄻      󱀤       󱡞  󰚝  
@@ -37,13 +40,14 @@
         "spacing": 10
     },
     "clock": {
-        "format-alt": "{:%Y-%m-%d}"
+		"format": "{:%H:%M}",
+        "format-alt": "{:%Y \nM: %m\nD: %d}"
     },
     "cpu": {
-        "format": "{usage}% "
+        "format": "\n\n{usage}%"
     },
     "memory": {
-        "format": "{}% "
+        "format": "\n\n{}%\n"
     },
     "battery": {
         "bat": "BAT0",
@@ -60,13 +64,13 @@
     "network": {
         // "interface": "wlp2s0", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-        "format-disconnected": "Disconnected ⚠"
+        "format-ethernet": "",
+        "format-disconnected": "⚠"
     },
     "pulseaudio": {
         //"scroll-step": 1,
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon}",
+        "format": "\n{icon}\n{volume}%\n",
+        "format-bluetooth": "\n{icon}\n{volume}%\n",
         "format-muted": "",
         "format-icons": {
             "headphones": "",
@@ -85,5 +89,13 @@
         "interval": 30, // Remove this if your script is endless and write in loop
         "exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null", // Script in resources folder
         "exec-if": "pgrep spotify"
-    }
+    },
+	"custom/void": {
+		"format": "\n"
+	},
+	"custom/start": {
+		"format": "\n\n",
+		"icon-size": 30,
+		"on-click": "wofi --show drun" 
+	}
 }

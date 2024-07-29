@@ -1,13 +1,14 @@
 * {
-    border: none;
-    border-radius: 0;
+    border: none;	
+    border-radius: 30px;
     font-family: "UbuntuMono Nerd Font";
-    font-size: 13px;
+    font-size: 16px;
     min-height: 0;
 }
 
 window#waybar {
-    background: rgba(20, 0, 40, 0.75);
+    background: linear-gradient(90deg, rgba(0, 0, 30, 0.8), rgba(50, 0, 100, 0.8));
+	/*rgba(20, 0, 40, 0.8);*/
 	/*filter: blur(50px); */
     color: white;
 }
@@ -23,10 +24,10 @@ window#waybar {
 */
 
 #workspaces button {
-    padding: 0 5px;
+    padding: 5px 5px;
+	/*background: linear-gradient(90deg, rgba(0, 0, 60, 0.8), rgba(60, 0, 120, 0.8));*/
     background: transparent;
     color: white;
-    border-top: 2px solid transparent;
 }
 
 #workspaces button.focused {
@@ -36,7 +37,10 @@ window#waybar {
 
 #workspaces button.active {
     color: yellow;
-    border-top: 2px solid yellow; /*You can adjust the border color as needed */
+    /*border-top: 2px solid yellow;
+	border-bottom: 2px solid yellow; */
+	background: linear-gradient(90deg, rgba(50, 0, 100, 0.8), rgba(0, 0, 30, 0.8));
+
 }
 
 #workspaces button.inactive {
@@ -60,6 +64,7 @@ window#waybar {
 
 #clock {
     font-weight: bold;
+	color: yellow;
 }
 
 #battery {
@@ -88,6 +93,7 @@ window#waybar {
     animation-direction: alternate;
 }
 
+
 #cpu {
 }
 
@@ -102,13 +108,22 @@ window#waybar {
 }
 
 #pulseaudio {
+	color: cyan;
 }
 
 #pulseaudio.muted {
+	color: cyan;
 }
 
 #custom-spotify {
     color: rgb(102, 220, 105);
+}
+
+#custom-start {
+	color: red;
+	background: linear-gradient(90deg, rgba(0, 0, 60, 0.8), rgba(70, 0, 140, 0.8));
+	border-top: 2px solid yellow;
+	border-bottom: 2px solid yellow;
 }
 
 #tray {
