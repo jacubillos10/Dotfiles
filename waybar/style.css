@@ -126,6 +126,10 @@ window#waybar {
 	border-bottom: 2px solid yellow;
 }
 
+#custom-void {
+	border-bottom: 2px solid yellow;
+}
+
 #tray {
 }
 

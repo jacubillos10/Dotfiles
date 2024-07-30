@@ -4,7 +4,8 @@
     //"height": 1080, // Waybar height
 	"margin-left": 5,
 	"margin-right": 5,
-	"margin-top": 0,
+	"margin-top": 5,
+	"margin-bottom": 5,
     // "width": 1366, // Waybar width
     // Choose the order of the modules
     //"modules-center": ["hyprland/window"],
@@ -96,6 +97,6 @@
 	"custom/start": {
 		"format": "\n\n",
 		"icon-size": 30,
-		"on-click": "wofi --show drun" 
+		"on-click": "wofi --show run" 
 	}
 }
