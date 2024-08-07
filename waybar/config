@@ -97,6 +97,6 @@
 	"custom/start": {
 		"format": "\n\n",
 		"icon-size": 30,
-		"on-click": "wofi --show run" 
+		"on-click": "wlogout --protocol layer-shell" 
 	}
 }
