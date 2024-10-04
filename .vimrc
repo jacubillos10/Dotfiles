@@ -14,6 +14,8 @@ set noexpandtab
 set tabstop=4
 set shiftwidth=4
 set showtabline=2
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
 
 call plug#begin('~/.vim/plugged')
 Plug 'tribela/vim-transparent'
@@ -41,6 +43,7 @@ inoremap <m-Left> <Esc>:bprevious <cr>
 nnoremap <m-S-down> <Esc>:Bclose <cr>
 inoremap <m-S-down> <Esc>:Bclose <cr>
 
+let NERDTreeShowHidden=1
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:airline#extensions#tabline#enabled = 1
 colorscheme molokai_cubos

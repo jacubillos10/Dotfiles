@@ -31,4 +31,7 @@ family = "UbuntuMono Nerd Font"
 [window]
 opacity = 0.8
 title = "Terminal"
+
+[cursor.style]
+shape = "Beam"
 #"window.decorations_theme_variant" = "dark"
