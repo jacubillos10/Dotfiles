@@ -47,3 +47,6 @@ let NERDTreeShowHidden=1
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:airline#extensions#tabline#enabled = 1
 colorscheme molokai_cubos
+
+autocmd VimLeave * !echo -ne "\e[6 q"
+
