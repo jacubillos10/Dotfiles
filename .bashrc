@@ -41,7 +41,15 @@ PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\]<\W>\[\033[33m\]$(parse_git_branch)\[\03
 export VISUAL=vim
 export EDITOR="$VISUAL"
 export HSA_OVERRIDE_GFX_VERSION=10.3.0
-export C_INCLUDE_PATH="$C_INCLUDE_PATH:/usr/include/python3.12:/home/cubos/.local/lib/python3.12/site-packages/numpy/_core/include"
+export HSA_ENABLE_SDMA=0
+export ROCM_ENABLE_LOGGING=1
+export AMD_SERIALIZE_KERNEL=3
+export C_INCLUDE_PATH="$C_INCLUDE_PATH:/usr/include/python3.13:/home/cubos/.local/lib/python3.13/site-packages/numpy/_core/include"
 export THESIS_PATH="/home/cubos/Proyectos/RUSpectroscopy_Tools"
+export TMC_PATH="/home/cubos/Documents/Cubos2.0/TMC"
+export MOOC_PATH="/home/cubos/.local/share/tmc/tmc_cli_rust/"
 export LEARNING_C_PATH="/home/cubos/Documents/Cubos2.0/C_open_edg/Aprendiendo_C"
-export KAGGLE_PATH="/home/cubos/Documents/Cubos2.0/ML/kaggle"
+export KERAS_BACKEND="torch"
+alias tmc='/home/cubos/Documents/Cubos2.0/TMC/tmc-cli-rust-x86_64-unknown-linux-gnu-v1.1.2'
+export TMC_LANGS_CONFIG_DIR='/home/cubos/tmc-config'
+source /home/cubos/.local/share/tmc-autocomplete/tmc.bash
