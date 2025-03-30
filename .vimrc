@@ -33,9 +33,9 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'ycm-core/YouCompleteMe'
 call vundle#end()
 
-autocmd VimEnter * NERDTree | vertical resize 30
-inoremap <c-t> <Esc>:NERDTreeToggle<cr>:vertical resize 30<cr>
-nnoremap <c-t> <Esc>:NERDTreeToggle<cr>:vertical resize 30<cr>
+autocmd VimEnter * NERDTree | vertical resize 25
+inoremap <c-t> <Esc>:NERDTreeToggle<cr>:vertical resize 25<cr>
+nnoremap <c-t> <Esc>:NERDTreeToggle<cr>:vertical resize 25<cr>
 nnoremap <m-Right> <Esc>:bnext <cr>
 inoremap <m-Right> <Esc>:bnext <cr>
 nnoremap <m-Left> <Esc>:bprevious <cr>
