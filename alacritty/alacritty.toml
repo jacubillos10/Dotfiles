@@ -1,3 +1,8 @@
+[general]
+#import = [
+#    "~/.config/alacritty/themes/themes/enfocado_dark.toml"
+#]
+
 [colors.bright]
 black = "#7f7f7f"
 blue = "#2575ff"
@@ -19,17 +24,17 @@ white = "#e5e5e5"
 yellow = "#cdcd00"
 
 [colors.primary]
-background = "#070028"##140028"#, "#000042"]
-foreground = "#ffff45"
+background = "#070018"#"#070018"##140028"#, "#000042"]
+foreground = "#eeee45"
 
 [font]
 size = 10.0
 
 [font.normal]
-family = "UbuntuMono Nerd Font"
+family = "JetBrainsMono Nerd Font"
 
 [window]
-opacity = 0.9
+opacity = 0.88
 title = "Terminal"
 
 [cursor.style]
