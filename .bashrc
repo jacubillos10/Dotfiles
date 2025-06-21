@@ -46,10 +46,10 @@ export ROCM_ENABLE_LOGGING=1
 export AMD_SERIALIZE_KERNEL=3
 export C_INCLUDE_PATH="$C_INCLUDE_PATH:/usr/include/python3.13:/home/cubos/.local/lib/python3.13/site-packages/numpy/_core/include"
 export THESIS_PATH="/home/cubos/Proyectos/RUSpectroscopy_Tools"
-export TMC_PATH="/home/cubos/Documents/Cubos2.0/TMC"
 export MOOC_PATH="/home/cubos/.local/share/tmc/tmc_cli_rust/"
 export LEARNING_C_PATH="/home/cubos/Documents/Cubos2.0/C_open_edg/Aprendiendo_C"
 export KERAS_BACKEND="torch"
+export WORK_PATH="/home/cubos/Documents/Uisr/"
 alias tmc='/home/cubos/Documents/Cubos2.0/TMC/tmc-cli-rust-x86_64-unknown-linux-gnu-v1.1.2'
 export TMC_LANGS_CONFIG_DIR='/home/cubos/tmc-config'
 source /home/cubos/.local/share/tmc-autocomplete/tmc.bash
