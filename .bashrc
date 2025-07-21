@@ -50,6 +50,11 @@ export MOOC_PATH="/home/cubos/.local/share/tmc/tmc_cli_rust/"
 export LEARNING_C_PATH="/home/cubos/Documents/Cubos2.0/C_open_edg/Aprendiendo_C"
 export KERAS_BACKEND="torch"
 export WORK_PATH="/home/cubos/Documents/Uisr/"
-alias tmc='/home/cubos/.local/share/tmc/tmc_cli_rust/tmc-cli-rust-x86_64-unknown-linux-gnu-v1.1.2'
+alias tmc='$MOOC_PATH/tmc-cli-rust-x86_64-unknown-linux-gnu-v1.1.2'
 export TMC_LANGS_CONFIG_DIR='/home/cubos/tmc-config'
 source /home/cubos/.local/share/tmc-autocomplete/tmc.bash
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/cubos/.lmstudio/bin"
+# End of LM Studio CLI section
+
