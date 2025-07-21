@@ -24,7 +24,7 @@ white = "#e5e5e5"
 yellow = "#cdcd00"
 
 [colors.primary]
-background = "#070018"#"#070018"##140028"#, "#000042"]
+background = "#070018"#Best purple ever: "#070018"# A lighter purple: #140028"#, Very dark blue"#000042"]
 foreground = "#eeee45"
 
 [font]
@@ -34,7 +34,7 @@ size = 10.0
 family = "JetBrainsMono Nerd Font"
 
 [window]
-opacity = 0.88
+opacity = 0.85 #0.90 for purple themes 095 for black ones
 title = "Terminal"
 
 [cursor.style]
